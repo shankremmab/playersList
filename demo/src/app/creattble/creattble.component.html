@@ -1,0 +1,102 @@
+-----------------------Players List-----------------------
+<div class="container-fluid">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <button class="btn btn-outline-success" type="button" (click)="getAllplayer()">User Tab</button>
+              <button class="btn btn-outline-success" type="button" (click)="getwinnersList()">Winner</button>
+
+              <button class="btn btn-outline-success" type="button" (click)="getTopperList()">Topper</button>
+            </form>
+          </nav>
+
+
+        <div class="col-md-8 mt-2" *ngIf="val" >
+            <h5 class="text-danger"> Players List</h5>
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">First name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Score</th>
+                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let player of filterData"  >
+                            <td >{{player.first_name}}</td>
+                            <td>{{player.Age}}</td>
+                            <td>{{player.Score}}</td>
+                            <td>
+                                <button class="btn btn-outline-danger" (click)="addToWinners(player)">addToWinners</button>
+                            </td>
+                      
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+
+
+      -----------------------Winners List------------------------------
+
+        <div class="col-md-8 mt-2"  *ngIf="val1">
+          <h5 class="text-danger"> Winners List</h5>
+          <div class="card p-3 shadow">
+              <div class="card-body">
+                  <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">First name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">Score</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let winner of winnerList "  >
+                          <td >{{winner.first_name}}</td>
+                          <td>{{winner.Age}}</td>
+                          <td>{{winner.Score}}</td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+ 
+   
+      -----------------------Topper List-----------------------
+
+      <div class="col-md-8 mt-2 " *ngIf="val2" >
+        <h5 class="text-danger"> Topper List</h5>
+        <div class="card p-3 shadow">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">First name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Score</th>
+                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let player of topperList"  >
+                        <td >{{player.first_name}}</td>
+                        <td>{{player.Age}}</td>
+                        <td>{{player.Score}}</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
